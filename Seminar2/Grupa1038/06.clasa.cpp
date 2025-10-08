@@ -10,8 +10,20 @@ class Calculator {
 
 // x, y
 private:
+    // PRIVATE - nu poate fi accesat din afara clasei
     int x, y;
+
+    // INCAPSULARE
+    void functie_privata() {
+        cout << "Functia PRIVATA este accesata !!!" << endl;
+    }
+
 public:
+
+    void functie_care_acceseaza_functia_privata () {
+        functie_privata();
+    }
+
     // GETTER - citire
     int getX(){
         return x;
@@ -68,6 +80,7 @@ int main () {
     cout << "Suma x + y la primul obiect este:" << obj_calc.suma() << endl;
     cout << "Suma x + y la cel de-al doilea obiect este:" << alt_obj_calc.suma() << endl;
 
+    obj_calc.functie_care_acceseaza_functia_privata();
 
     return 0;
 }
