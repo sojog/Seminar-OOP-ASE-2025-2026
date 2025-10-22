@@ -5,7 +5,8 @@
 using namespace std; 
 
 
-
+// CLASA este un sablon - din ea se pot crea mai multe obiecte
+// numele clasei - (CONVENTIE) cu litera mare
 class Calculator {
 
 // x, y
@@ -55,7 +56,10 @@ public:
 
 
 int main () {
+    // Crearea unui obiect prin valoare
     Calculator obj_calc;
+    // Crearea unui obiect prin referinta
+    Calculator *ptr_calc = new Calculator();
     
     cout << "Valorea lui x:" << obj_calc.getX() << endl;
     cout << "Valorea lui y:" << obj_calc.getY() << endl;
