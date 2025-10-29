@@ -1,7 +1,7 @@
 
 Creați o clasă Coordonata care conțină
 1. Parametri latitudine și longitudine care reprezintă coordinatele pe glob.
-2. Getter și setter pentru puncte
+2. Getter și setter pentru coordonate
 3. Constructor cu parametri
 4. Constructor default
 5. Creați 2 obiecte în main cu fiecare constructor.
