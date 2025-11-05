@@ -9,7 +9,7 @@ using namespace std;
     1. Constructor cu parametri, default, de copiere
     2. Operator de atribuire, afisare, comparatie
     3. Adăugați un membru static, unul constant (pentru valoarea maximă). Verificați în main.
-    4. Adăugați un membru alocat dinamic. 
+    4. Adăugați un membru alocat dinamic.
 
 */
 
@@ -17,20 +17,54 @@ class Masina {
 private:
     int putereCP;          // cai putere
     int anFabricatie;
-    bool isValidPutere(int p) const { return p >= 0 && p <= 1000; }
+    // CONVENTIE Variabila consta cu litere mari (toate)
+    const int PUTERE_MAXIMA = 1000;
 
+    bool isValidPutere(int p) const {
+        return p >= 0 && p <= PUTERE_MAXIMA; 
+    }
+
+    static int nr_masini;
+
+    // Element alocat dinamic
+    char* nume; 
 public:
     Masina() {
         this->putereCP = 0;
         this->anFabricatie = 2025;
+        nr_masini++;
+
+        // char* nume; 
+        // cout << "Margareta";
+        nume = new char[10];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
+        strcpy (nume, "Margareta");// lungimea sirului + "\0";
+
     }
-    Masina(int putereCP, int anFabricatie) {
+    Masina(int putereCP, int anFabricatie, const char* nume) {
         this->putereCP = putereCP;
         this->anFabricatie = anFabricatie;
+
+        nume = new char[strlen(nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
+        strcpy(this->nume, nume);// lungimea sirului + "\0";
+
+        ++nr_masini;
     }
     Masina(const Masina& other) {
         this->putereCP = other.putereCP;
         this->anFabricatie = other.anFabricatie;
+        ++nr_masini;
+
+        nume = new char[strlen(other.nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
+        strcpy(this->nume, other.nume);// lungimea sirului + "\0";
+    }
+
+    // Destructor -> are ~ in fata
+    // numele la fel ca la constructor fara param
+    ~Masina() {
+        cout << "Destructorul a fost apelat " << endl;
+        --nr_masini;
+
+        delete[]nume;
     }
 
 
@@ -85,7 +119,8 @@ public:
         return *this;
     }
 };
-
+// Definirea valoarii initiale
+int Masina::nr_masini = 0;
 
 
 int main()
@@ -93,7 +128,7 @@ int main()
     // Constructor Default
     Masina m1;
     // Constructor cu parametri
-    Masina m2(100, 2020);
+    Masina m2(100, 2020, "Furia Rosie");
     // Constructor de copiere
     Masina m3 = m2;
 
