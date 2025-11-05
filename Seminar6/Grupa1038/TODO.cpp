@@ -5,6 +5,8 @@ using namespace std;
     Pentru clasa Mașină creați
     1. Constructor cu parametri, default, de copiere
     2. Operator de atribuire, afisare, comparatie
+    3. Adăugați un membru static, unul constant (pentru valoarea maximă). Verificați în main.
+    4. Adăugați un membru alocat dinamic. 
 
 */
 
