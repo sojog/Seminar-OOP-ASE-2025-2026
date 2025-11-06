@@ -44,7 +44,7 @@ public:
         this->putereCP = putereCP;
         this->anFabricatie = anFabricatie;
 
-        nume = new char[strlen(nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
+        this->nume = new char[strlen(nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
         strcpy(this->nume, nume);// lungimea sirului + "\0";
 
         ++nr_masini;
@@ -54,7 +54,7 @@ public:
         this->anFabricatie = other.anFabricatie;
         ++nr_masini;
 
-        nume = new char[strlen(other.nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
+        this->nume = new char[strlen(other.nume) + 1];                                  // Alocare ->  [ _, _ ,  _          ...         _  ]
         strcpy(this->nume, other.nume);// lungimea sirului + "\0";
     }
 
