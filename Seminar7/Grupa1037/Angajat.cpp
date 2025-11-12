@@ -8,6 +8,9 @@ using namespace std;
     Pentru clasa Angajat creați
     1. Constructor de copiere
     2. Operator de atribuire, afisare, comparatie
+
+
+    3. Creați un array alocat dinamic pentru zile de concediu
 */
 
 class Angajat {
