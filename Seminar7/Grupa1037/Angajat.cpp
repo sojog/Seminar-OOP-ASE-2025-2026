@@ -1,6 +1,8 @@
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
+
+
 
 /*
     Pentru clasa Angajat creați
@@ -11,15 +13,24 @@ using namespace std;
 class Angajat {
     int varsta;
     double salariu;
+    // atribut alocat dinamic (pointer)
+    char* nume;
 public:
     // Constructor cu parametri
-    Angajat(int varsta, double salariu) : varsta(varsta), salariu(salariu) {
+    Angajat(const char* nume, int varsta, double salariu) : varsta(varsta), salariu(salariu) {
+        
+        // pentru atribut alocat dinamic
+        this->nume = new char[strlen(nume) + 1];
+        strcpy(this->nume, nume);
     }
 
     // Constructor de copiere
     Angajat(const Angajat& a) {
         this->varsta = a.varsta;
         this->salariu = a.salariu;
+
+        this->nume = new char[strlen(a.nume) + 1];
+        strcpy(this->nume, a.nume);
 
     }
     // Clasa obiect1
@@ -28,7 +39,18 @@ public:
     Angajat& operator= (const Angajat& from) {
         this->salariu = from.salariu;
         this->varsta = from.varsta;
+        
+
+        this->nume = new char[strlen(from.nume) + 1];
+        strcpy(this->nume, from.nume);
+        
+        
         return *this;
+    }
+    // Destructor
+    ~Angajat() {
+        // daca este vorba de array folosesc 
+        delete[] this->nume;
     }
 
     bool operator== (const Angajat& compared) {
@@ -78,17 +100,17 @@ public:
 
 int main()
 {
-    Angajat a1(20, 30000);
+    Angajat a1("Ionut", 20, 30000);
     cout << a1;
 
 
-    Angajat a2(19, 29000);
+    Angajat a2("Maria", 19, 29000);
     cout << a2;
 
     //a2 = a1;
     //cout << a2;
 
-    Angajat a3(29, 30000);
+    Angajat a3("Florin", 29, 30000);
     cout << "Cei doi salariati au salariul egal: " << (a3 == a1) << endl;
     cout << "Cei doi salariati au salariul egal: " << (a3 == a2) << endl;
 
