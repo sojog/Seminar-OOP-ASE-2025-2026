@@ -8,9 +8,6 @@ using namespace std;
     Pentru clasa Angajat creați
     1. Constructor de copiere
     2. Operator de atribuire, afisare, comparatie
-
-
-    3. Creați un array alocat dinamic pentru zile de concediu
 */
 
 class Angajat {
@@ -18,13 +15,27 @@ class Angajat {
     double salariu;
     // atribut alocat dinamic (pointer)
     char* nume;
+
+    // 
+    int* zileDeConcediu;
+    int nrZile;
+
 public:
     // Constructor cu parametri
-    Angajat(const char* nume, int varsta, double salariu) : varsta(varsta), salariu(salariu) {
-        
+    Angajat(const char* nume, int varsta, double salariu, int* concediu, int nrZile) : varsta(varsta), salariu(salariu) {
+
+        // Merge doar la char
         // pentru atribut alocat dinamic
         this->nume = new char[strlen(nume) + 1];
         strcpy(this->nume, nume);
+
+        this->zileDeConcediu = new int[nrZile];
+        this->nrZile = nrZile;
+        for (int i = 0; i < nrZile; i++) {
+            zileDeConcediu[i] = concediu[i];
+        }
+
+
     }
 
     // Constructor de copiere
@@ -34,6 +45,12 @@ public:
 
         this->nume = new char[strlen(a.nume) + 1];
         strcpy(this->nume, a.nume);
+
+
+        this->zileDeConcediu = new int[a.nrZile];
+        for (int i = 0; i < nrZile; i++) {
+            zileDeConcediu[i] = a.zileDeConcediu[i];
+        }
 
     }
     // Clasa obiect1
@@ -48,12 +65,21 @@ public:
         strcpy(this->nume, from.nume);
         
         
+
+        this->zileDeConcediu = new int[from.nrZile];
+        for (int i = 0; i < nrZile; i++) {
+            zileDeConcediu[i] = from.zileDeConcediu[i];
+        }
+
         return *this;
     }
     // Destructor
     ~Angajat() {
         // daca este vorba de array folosesc 
         delete[] this->nume;
+
+        // 
+        delete[] this->zileDeConcediu;
     }
 
     bool operator== (const Angajat& compared) {
