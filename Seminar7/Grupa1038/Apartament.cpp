@@ -47,7 +47,7 @@ public:
         this->nrPreturi = other.nrPreturi;
         this->preturiDeVanzare = new double[other.nrPreturi];
         for (int i = 0; i < other.nrPreturi; i++) {
-            this->preturiDeVanzare[i] = preturiDeVanzare[i];
+            this->preturiDeVanzare[i] = other.preturiDeVanzare[i];
         }
 
 
@@ -141,14 +141,20 @@ public:
 
 };
 int main()
-{
-    Apartament ap1("Universitate", 40, 80000);
+{   
+    // Date pentru istoricul prețurilor
+    double preturi1[] = {75000, 78000, 80000};
+    double preturi2[] = {85000, 88000};
+    double preturi3[] = {75000, 78000, 80000};
+    double preturi4[] = {90000};
+
+    Apartament ap1("Universitate", 40, 80000, preturi1,3);
     Apartament ap2 = ap1; // constructor de copiere
 
     cout << ap2;
 
-    Apartament ap3("Carol", 50, 80000);
-    Apartament ap4("Victoriei", 40, 90000);
+    Apartament ap3("Carol", 50, 80000, preturi2, 2);
+    Apartament ap4("Victoriei", 40, 90000, preturi3, 3);
     cout << "Sunt egale (pret) cele doua apartamente: " << (ap1 == ap3) << endl;
     cout << "Sunt egale (pret) cele doua apartamente: " << (ap1 == ap4) << endl;
 
