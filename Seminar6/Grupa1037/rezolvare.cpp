@@ -45,7 +45,7 @@ public:
         this->albastru = albastru;
         counter++;
 
-        nume = new char[strlen(nume) + 1];
+        this->nume = new char[strlen(nume) + 1];
         strcpy(this->nume, nume);
         
     }
@@ -57,6 +57,9 @@ public:
         this->verde = other.verde;
         this->albastru = other.albastru;
         counter++;
+
+        this->nume = new char[strlen(other.nume) + 1];
+        strcpy(this->nume, other.nume);
     }
 
     // Culoare c1;
@@ -138,7 +141,7 @@ int main()
 {
 
     Culoare negru;
-    Culoare fucshia(200, 34, 12);
+    Culoare fucshia(200, 34, 12, "fucshia");
 
     // operator << 
     cout << negru;
