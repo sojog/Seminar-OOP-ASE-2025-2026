@@ -5,7 +5,7 @@ Parcarea are o taxă de parcare, precum și o capacitate maximă de mașini.
 
 1. Implementați clasa cu 1 membru alocat dinamic, unul constant și unul static.
 
-2. Creați cpnstructori și destructor
+2. Creați constructori și destructor
 
 3. Operatorii <<, ++
 
