@@ -9,3 +9,4 @@ Clasa deţine următoarele implementări:
 
  - operatorul de afisare - se printează dimensiunile dreptunghiului;
  - area - calculează aria dreptunghiului.
+ - is_square - spune dacă un dreptunghi este pătrat
