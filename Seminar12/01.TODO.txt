@@ -1,0 +1,1 @@
+Creați clasa Sportiv care conține un nume, prenume și data nasterii.
