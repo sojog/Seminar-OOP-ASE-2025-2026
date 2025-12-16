@@ -1,5 +1,3 @@
-https://unrepented-danuta-coua.ngrok-free.dev 
-
 // Seminar11-1038.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
