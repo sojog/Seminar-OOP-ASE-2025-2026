@@ -1,0 +1,34 @@
+
+Creați clasa InvestmentCalculator care calculeaza suma investită la bursă
+
+1. Clasa are următorii parametri initial_investment, interest_rate, compounding_interval, years, investments (membru alocat dinamic)
+
+2. Pentru compounding_interval creați o enumerare cu valorile ("daily", "monthly", "quarterly", "annually")
+
+3. Construiți constructor cu parametri, default, constructor de copiere, operatorul=
+
+4. Creați getter si setter pentru years
+
+5. Adăugați un membru impozitv_venit (static) pentru a vedea valoarea după taxe
+
+6. Suprascrieți operatorul << pentru afișare in consolă
+
+7. Suprascrieți operatorul << pentru scriere in fisier text
+
+8. Suprascrieți operatorul >> pentru citire a unui obiect dintr-un fisier text
+
+9. Suprascrieți operatorii de comparație pentru a vedea suma totală dintre 2 conturi
+
+10. Suprascrieți operatorul care face conversie la int de la obiect
+
+11. Suprascrieti operatorul [] care intoarce un anumit valoarea după anumită perioadă. Ex: [2] -> după 2 ani dacă 
+
+12. Adăugați un membru implicit taxa_administrare și apoi moșteniti astfel încât să creați 2 clase cu valori diferite
+
+13. Creați o clasă Portofolio care conține mai multe obiecte de tip InvestmentCalculator și calculeaza totalul, minim, maxim, meadia. 
+
+14. Transformă clasa InvestmentCalculator intr-o clasă template
+
+
+
+
