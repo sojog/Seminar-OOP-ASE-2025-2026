@@ -21,7 +21,7 @@ Creați clasa CalculatorInvestit (InvestmentCalculator) care calculeaza suma inv
 
 10. Suprascrieți operatorul care face conversie la int de la obiect
 
-11. Suprascrieti operatorul [] care intoarce un anumit valoarea după anumită perioadă. Ex: [2] -> după 2 ani dacă 
+11. Suprascrieti operatorul [] care intoarce un anumit valoarea după anumită perioadă. Ex: [2] -> după 2 ani dacă a trecut perioada 
 
 12. Adăugați un membru implicit taxa_administrare și apoi moșteniti astfel încât să creați 2 clase cu valori diferite
 
